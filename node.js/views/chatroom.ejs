@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <%- include('includes/head') -%>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/app.js"></script>
+</head>
+<body>
+    <!-- 들여쓰기는 alt + shift + f -->
+    <div class="container">
+        <%- include('includes/nav') -%>
+
+        <div class="row my-4">
+            <div class="col-10 offset-1">
+                <div class="row" id="chatView">
+                    <div class="col-8">
+                        <ul id="chatList">
+                            <li class="msg">안녕하세요1</li>
+                            <li class="msg my">안녕하세요2</li>
+                        </ul>
+                        <div class="input-box">
+                            <input type="text" id="msgText">
+                            <button id="sendBtn">
+                                <i class="far fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div id="userList">
+                            <div class="user">엄준식</div>
+                            <div class="user">둘리</div>
+                            <div class="user my">마이콜</div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end of col-10 offset-1 -->
+        </div> <!-- end of row-->
+
+        <div class="row">
+            <div class="col-12">
+                <footer class="bg-dark text-white p-3 text-center">
+                    Copyright &copy; All right reserved to SSJB.hs.kr
+                </footer>
+            </div>
+        </div>
+
+        <div id="popup">
+            <div class="inner">
+                <div class="row">
+                    <div class="col-8 offset-2">
+                        <h2 class="title text-center my-4">로그인</h2>
+                        <input id="nickname" class="form-control mb-2" type="text"
+                                placeholder="사용할 닉네임을 입력하세요">
+                        <button class="btn btn-block btn-primary" id="loginBtn">
+                            로그인
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div> <!-- end of container -->
+</body>
+<!-- 10.114.52.99:9090 -->
+</html>

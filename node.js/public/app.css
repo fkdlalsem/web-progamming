@@ -1,0 +1,115 @@
+#chatView {
+    height: 500px;
+}
+
+#chatView > .col-8{
+    height:100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 40px;
+}
+
+#chatList {
+    margin:0;
+    padding: 10px;
+    list-style:none;
+    height:100%;
+    overflow-y: scroll;
+    background-color: #b6cddd;
+}
+
+.msg {
+    display: block;
+    background-color:#fff;
+    color:#000;
+    border:none;
+    margin-bottom: 6px;
+    border-radius: 0.25rem;
+    padding:0.25rem 0.7rem;
+    width:80%;
+}
+
+.msg.my {
+    background-color:#f9e000;
+    margin-left:20%;
+}
+
+.input-box {
+    display: flex;
+    /* grid-template-columns: 1fr 40px; */
+}
+
+.input-box > input {
+    border:1px solid #ddd;
+    outline: none;
+    padding:4px 12px;
+    flex:1;
+}
+
+.input-box > button {
+    border:none;
+    outline: none;
+    width:40px;
+    display: none;
+}
+
+.input-box > button.on {
+    display: block;
+}
+
+#sendBtn {
+    background-color: #f9e000;
+}
+#sendBtn > i {
+    color:#fff;
+}
+
+#popup {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#popup .inner {
+    width:400px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding:10px;
+}
+
+#userList {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 50px;
+    gap:10px;
+    padding:20px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: rgb(176, 224, 230);
+    border-radius: 10px;
+}
+.user.my {
+    background-color: rgb(230, 255, 3);
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 60px 1fr 60px;
+    min-height: 100vh;
+}

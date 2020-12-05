@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../includes/head') -%>
+<body>
+    <div class="container">
+        <%- include('../includes/nav') -%>
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12">
+                        <h3>게시판 페이지</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-10 offset-1">
+                        <table class="table table-striped">
+                            <tr>
+                                <th>글번호</th>
+                                <th width="50%">제목</th>
+                                <th>글쓴이</th>
+                                <th>날짜</th>
+                                <th>조회수</th>
+                            </tr>
+                            <% for(let i = 0; i < list.length; i++) { %>
+                                <tr>
+                                    <td><%= list[i].id %></td>
+                                    <td>
+                                        <a href="/board/view/<%= list[i].id %>">
+                                            <%= list[i].title %>
+                                        </a>
+                                    </td>
+                                    <td><%= list[i].writer %></td>
+                                    <td><%= list[i].date.fDate() %></td>
+                                    <td><%= list[i].view_cnt %></td>
+                                </tr>
+                            <% } %>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <% if(locals.user) { %>
+                        <div class="col-10 offset-1 text-right">
+                            <a href="/board/write" class="btn btn-primary">글쓰기</a>
+                        </div>
+                    <% } %>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-10">
+                        <nav>
+                            <ul class="pagination justify-content-center">
+                                <% if(pager.prev) { %>
+                                <li class="page-item">
+                                    <a href="/board/?p=<%= pager.start - 1 %>" class="page-link">이전</a>
+                                </li>
+                                <% } %>               
+
+                                <% for(let i = pager.start; i <= pager.end; i++){ %>
+                                <li class="page-item <%= i == pager.currentPage ? 'active' : '' %>">
+                                    <a href="/board/?p=<%= i %>" class="page-link"><%= i %></a>
+                                </li>                                
+                                <% } %>
+
+                                <% if(pager.next) { %>
+                                <li class="page-item">
+                                    <a href="/board/?p=<%= pager.end + 1 %>" class="page-link">다음</a>
+                                </li>  
+                                <% } %>                              
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+        <!--이 페이지를 /board/write 로 접속시에 보이도록 server.js에 코딩해 -->
+        <div class="row">
+            <div class="col-12">
+                <footer class="bg-dark text-white p-3 text-center">
+                    Copyright &copy; All right reserved to SSJB.hs.kr
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

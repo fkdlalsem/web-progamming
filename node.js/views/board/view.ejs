@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../includes/head') -%>
+<body>
+    <div class="container">
+        <%- include('../includes/nav') -%>
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12">
+                        <h3><%= viewData.title %></h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-10 offset-1">
+                        <div class="card">
+                            <div class="card-header">
+                                <%= viewData.name %>
+                                <%= viewData.date.fDate() %>
+                                <%= viewData.view_cnt %>
+                            </div>
+                            <div class="card-body">
+                                <%= viewData.content %>
+                            </div>
+                            <div class="card-footer">
+                                <% if(myArticle) { %>
+                                    <a href="/board/mod <%= viewData.id %>" class="btn btn-info">수정</a>
+                                    <a href="/board/delete/<%= viewData.id %>" class="btn btn-danger">삭제</a>
+                                <% } %>
+                                <a href="/board" class="btn btn-primary">목록</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+        <!--이 페이지를 /board/write 로 접속시에 보이도록 server.js에 코딩해 -->
+        <div class="row">
+            <div class="col-12">
+                <footer class="bg-dark text-white p-3 text-center">
+                    Copyright &copy; All right reserved to SSJB.hs.kr
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

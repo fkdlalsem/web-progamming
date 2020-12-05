@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <%- include('includes/head') -%>
+</head>
+
+<body>
+    <div class="container">
+        <%- include('includes/nav') -%>
+        
+        <div class="row mt-4">
+            <div class="col-10 offset-1">
+                <p>전체 : <span class="badge badge-primary"><%= total %></span></p>
+                <p>증가 : <span class="badge badge-primary"><%= inc %></span></p>
+                <p>국내 : <span class="badge badge-primary"><%= incIn %></span></p>
+                <p>해외 : <span class="badge badge-primary"><%= incOut %></span></p>
+            </div> <!-- end of col-10 offset-1 -->
+        </div> <!-- end of row-->
+
+        <div class="row">
+            <div class="col-12">
+                <footer class="bg-dark text-white p-3 text-center">
+                    Copyright &copy; All right reserved to SSJB.hs.kr
+                </footer>
+            </div>
+        </div>
+    </div> <!-- end of container -->
+</body>
+<!-- 10.114.52.99:9090 -->
+</html>
